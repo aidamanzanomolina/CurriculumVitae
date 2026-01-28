@@ -8,6 +8,24 @@ body {
     padding: 20px;
 }
 
+.foto-perfil img {
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #1d507a;
+    background-color: white;
+    object-fit: cover;
+}
+
+.contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    line-height: 0.1;
+    color: #283846;
+}
+
 .encabezado-cv {
     display: flex;
     flex-direction: column;
@@ -91,4 +109,19 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+}
+
+button {
+    background-color: #3b6fa0; 
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px; 
+    cursor: pointer;
+    margin: 15px 0;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
