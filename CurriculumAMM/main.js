@@ -116,8 +116,6 @@ const competencias = ['Trabajo en equipo', 'Análisis de datos', 'Sostenibilidad
 const listaCompetencias = document.getElementById('listaCompetencias');
 
 function marcarCompetencias() {
-    if (!listaCompetencias) return;
-    listaCompetencias.innerHTML = '';
     competencias.forEach(competencia => {
         const item = document.createElement('li');
         item.textContent = competencia;
