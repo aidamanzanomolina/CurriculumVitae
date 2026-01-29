@@ -1,159 +1,90 @@
-const parrafo = document.getElementById('parrafoSobreMi');
+const parrafo = document.getElementById('parrafoSobreMi')
 
 if (parrafo) {
     parrafo.addEventListener('mouseover', () => {
-        parrafo.style.color = '#0b63e7';
-    });
+        parrafo.style.color = '#0b63e7'
+    })
     parrafo.addEventListener('mouseout', () => {
-        parrafo.style.color = '';
-    });
+        parrafo.style.color = ''
+    })
 }
 
-const experiencia = [
-    {
-        titulo: "Consultora Associate en ESG & Sustainable Finance",
-        empresa: "Enfoque Advisory | Madrid",
-        periodo: "Septiembre 2024 - Presente",
-        tareas: ["Proyecto de cálculo de riesgos climáticos en el ámbito financiero del BBVA."]
-    },
-    {
-        titulo: "Técnica en Sostenibilidad y Regadíos",
-        empresa: "TRAGSATEC Grupo Tragsa | Madrid",
-        periodo: "Octubre 2023 - Agosto 2024",
-        tareas: ["Implementación del Proyecto Observatorio de la Sostenibilidad del Regadío (OSR)."]
-    },
-    {
-        titulo: "Ingeniera Jr. Zonas Verdes",
-        empresa: "FCC Medio Ambiente | Las Rozas (Madrid)",
-        periodo: "Noviembre 2021 - Mayo 2022",
-        tareas: ["Gestión de las zonas verdes de Las Rozas."]
-    }
-];
+const titulos = document.querySelectorAll('.tituloExp')
+const puestos = document.querySelectorAll('.puestoExp')
+const tareas = document.querySelectorAll('.tareaExp')
 
-const contenedorExperiencia = document.querySelector('.experiencia-laboral');
+titulos.forEach(titulo => {
+    titulo.addEventListener('mouseover', () => titulo.style.color = '#c2d1eb')
+    titulo.addEventListener('mouseout', () => titulo.style.color = '#000')
+})
 
-function marcarExperiencia() {
-    if (!contenedorExperiencia) return;
-    contenedorExperiencia.innerHTML = '<h2>Experiencia laboral</h2>';
-    experiencia.forEach(puesto => {
-        const divPuesto = document.createElement('div');
-        divPuesto.className = 'puesto';
+puestos.forEach(puesto => {
+    puesto.addEventListener('mouseover', () => puesto.style.color = '#20b2d3')
+    puesto.addEventListener('mouseout', () => puesto.style.color = '#000')
+})
 
-        const h3 = document.createElement('h3');
-        h3.textContent = puesto.titulo;
-        h3.addEventListener('mouseover', () => h3.style.color = '#c2d1eb');
-        h3.addEventListener('mouseout', () => h3.style.color = '#000000');
+tareas.forEach(tarea => {
+    tarea.addEventListener('mouseover', () => tarea.style.color = '#0b63e7')
+    tarea.addEventListener('mouseout', () => tarea.style.color = '#000')
+});
 
-        const p = document.createElement('p');
-        p.textContent = `${puesto.empresa} | ${puesto.periodo}`;
-        p.addEventListener('mouseover', () => p.style.color = '#20b2d3');
-        p.addEventListener('mouseout', () => p.style.color = '#000000');
+const tituloEstudios = document.getElementById('estudiosTitulo')
+const textoEstudios = document.getElementById('estudiosCentro')
 
-        const ul = document.createElement('ul');
-        puesto.tareas.forEach(tarea => {
-            const li = document.createElement('li');
-            li.textContent = tarea;
-            li.addEventListener('mouseover', () => li.style.color = '#0b63e7');
-            li.addEventListener('mouseout', () => li.style.color = '#000000');
-            ul.appendChild(li);
-        });
-
-        divPuesto.appendChild(h3);
-        divPuesto.appendChild(p);
-        divPuesto.appendChild(ul);
-        contenedorExperiencia.appendChild(divPuesto);
-    });
+if (tituloEstudios) {
+    tituloEstudios.addEventListener('mouseover', () => tituloEstudios.style.color = '#c2d1eb')
+    tituloEstudios.addEventListener('mouseout', () => tituloEstudios.style.color = '#000')
 }
 
-const estudios = [
-    {
-        titulo: "Grado en Ingeniería Agroambiental",
-        centro: "Universidad Politécnica de Madrid",
-        detalles: [
-            "Desarrollo sostenible del medio rural y políticas agroambientales.",
-            "Desarrollo y aplicación de metodologías propias de la ingeniería para evaluar y gestionar la calidad ambiental en la agricultura y medio rural."
-        ]
-    }
-];
-
-const contenedorEstudios = document.querySelector('.estudios');
-
-function marcarEstudios() {
-    if (!contenedorEstudios) return;
-    contenedorEstudios.innerHTML = '<h2>Estudios</h2>';
-
-    estudios.forEach(item => {
-        const divEstudio = document.createElement('div');
-        divEstudio.className = 'estudio';
-
-        const h3 = document.createElement('h3');
-        h3.textContent = item.titulo;
-        h3.addEventListener('mouseover', () => h3.style.color = '#c2d1eb');
-        h3.addEventListener('mouseout', () => h3.style.color = '#000000');
-
-        const p = document.createElement('p');
-        p.textContent = item.centro;
-        p.addEventListener('mouseover', () => p.style.color = '#20b2d3');
-        p.addEventListener('mouseout', () => p.style.color = '#000000');
-
-        const ul = document.createElement('ul');
-        item.detalles.forEach(detalle => {
-            const li = document.createElement('li');
-            li.textContent = detalle;
-            li.addEventListener('mouseover', () => li.style.color = '#0b63e7');
-            li.addEventListener('mouseout', () => li.style.color = '#000000');
-            ul.appendChild(li);
-        });
-
-        divEstudio.appendChild(h3);
-        divEstudio.appendChild(p);
-        divEstudio.appendChild(ul);
-        contenedorEstudios.appendChild(divEstudio);
-    });
+if (textoEstudios) {
+    textoEstudios.addEventListener('mouseover', () => textoEstudios.style.color = '#20b2d3')
+    textoEstudios.addEventListener('mouseout', () => textoEstudios.style.color = '#000')
 }
 
 const competencias = ['Trabajo en equipo', 'Análisis de datos', 'Sostenibilidad ambiental', 'Manejo de Excel'];
-const listaCompetencias = document.getElementById('listaCompetencias');
+const listaCompetencias = document.getElementById('listaCompetencias')
 
 function marcarCompetencias() {
     competencias.forEach(competencia => {
-        const item = document.createElement('li');
-        item.textContent = competencia;
-        item.addEventListener('mouseover', () => item.style.color = '#0b63e7');
-        item.addEventListener('mouseout', () => item.style.color = '#000000');
-        listaCompetencias.appendChild(item);
-    });
+        const item = document.createElement('li')
+        item.textContent = competencia
+        item.addEventListener('mouseover', () => item.style.color = '#0b63e7')
+        item.addEventListener('mouseout', () => item.style.color = '#000000')
+        listaCompetencias.appendChild(item)
+    })
 }
+
+marcarCompetencias()
 
 class Botones {
     constructor(idBoton) {
-        this.boton = document.getElementById(idBoton);
-        if (!this.boton) return;
-        this.contenido = this.boton.nextElementSibling;
-        this.textoOriginal = this.boton.textContent;
-        this.contenido.style.display = "none";
-        this.iniciar();
+        this.boton = document.getElementById(idBoton)
+        if (!this.boton) return
+        this.contenido = this.boton.nextElementSibling
+        this.textoOriginal = this.boton.textContent
+        this.contenido.style.display = "none"
+        this.iniciar()
     }
 
     iniciar() {
         this.boton.addEventListener('click', () => {
             if (this.contenido.style.display === "none") {
-                this.contenido.style.display = "block";
-                this.boton.textContent = "Ocultar";
+                this.contenido.style.display = "block"
+                this.boton.textContent = "Ocultar"
             } else {
-                this.contenido.style.display = "none";
-                this.boton.textContent = this.textoOriginal;
+                this.contenido.style.display = "none"
+                this.boton.textContent = this.textoOriginal
             }
-        });
+        })
     }
 }
 
-marcarExperiencia();
-marcarEstudios();
-marcarCompetencias();
+marcarExperiencia()
+marcarEstudios()
+marcarCompetencias()
 
-new Botones('botonSobremi');
-new Botones('botonExperiencia');
-new Botones('botonEstudios');
-new Botones('botonCompetencias');
-new Botones('botonInfo');
+new Botones('botonSobremi')
+new Botones('botonExperiencia')
+new Botones('botonEstudios')
+new Botones('botonCompetencias')
+new Botones('botonInfo')
