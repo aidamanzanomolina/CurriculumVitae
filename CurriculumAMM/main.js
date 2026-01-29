@@ -9,37 +9,35 @@ if (parrafo) {
     })
 }
 
-const titulos = document.querySelectorAll('.tituloExp')
-const puestos = document.querySelectorAll('.puestoExp')
-const tareas = document.querySelectorAll('.tareaExp')
+const titulos = document.querySelectorAll('.tituloExp');
+const puestos = document.querySelectorAll('.puestoExp');
 
 titulos.forEach(titulo => {
-    titulo.addEventListener('mouseover', () => titulo.style.color = '#c2d1eb')
-    titulo.addEventListener('mouseout', () => titulo.style.color = '#000')
-})
-
-puestos.forEach(puesto => {
-    puesto.addEventListener('mouseover', () => puesto.style.color = '#20b2d3')
-    puesto.addEventListener('mouseout', () => puesto.style.color = '#000')
-})
-
-tareas.forEach(tarea => {
-    tarea.addEventListener('mouseover', () => tarea.style.color = '#0b63e7')
-    tarea.addEventListener('mouseout', () => tarea.style.color = '#000')
+    titulo.addEventListener('mouseover', () => titulo.style.color = '#c2d1eb');
+    titulo.addEventListener('mouseout', () => titulo.style.color = '#000');
 });
 
-const tituloEstudios = document.getElementById('estudiosTitulo')
-const textoEstudios = document.getElementById('estudiosCentro')
+puestos.forEach(puesto => {
+    puesto.addEventListener('mouseover', () => puesto.style.color = '#20b2d3');
+    puesto.addEventListener('mouseout', () => puesto.style.color = '#000');
+});
+
+function marcarExperiencia() {}
+
+const tituloEstudios = document.getElementById('estudiosTitulo');
+const textoEstudios = document.getElementById('estudiosCentro');
 
 if (tituloEstudios) {
-    tituloEstudios.addEventListener('mouseover', () => tituloEstudios.style.color = '#c2d1eb')
-    tituloEstudios.addEventListener('mouseout', () => tituloEstudios.style.color = '#000')
+    tituloEstudios.addEventListener('mouseover', () => tituloEstudios.style.color = '#c2d1eb');
+    tituloEstudios.addEventListener('mouseout', () => tituloEstudios.style.color = '#000');
 }
 
 if (textoEstudios) {
-    textoEstudios.addEventListener('mouseover', () => textoEstudios.style.color = '#20b2d3')
-    textoEstudios.addEventListener('mouseout', () => textoEstudios.style.color = '#000')
+    textoEstudios.addEventListener('mouseover', () => textoEstudios.style.color = '#20b2d3');
+    textoEstudios.addEventListener('mouseout', () => textoEstudios.style.color = '#000');
 }
+
+function marcarEstudios() {}
 
 const competencias = ['Trabajo en equipo', 'Análisis de datos', 'Sostenibilidad ambiental', 'Manejo de Excel'];
 const listaCompetencias = document.getElementById('listaCompetencias')
@@ -53,8 +51,6 @@ function marcarCompetencias() {
         listaCompetencias.appendChild(item)
     })
 }
-
-marcarCompetencias()
 
 class Botones {
     constructor(idBoton) {
